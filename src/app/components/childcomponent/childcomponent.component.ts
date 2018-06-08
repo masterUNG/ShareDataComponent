@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-childcomponent',
@@ -9,6 +9,17 @@ export class ChildcomponentComponent implements OnInit {
 
   // Explicit
   @Input() nameFromParrent: string;
+  @Input() numberFromParrent: number;
+
+  numberChildInt = 0;
+  colorChild = '#ff2621';
+
+  @Output() eventIncreaseChild = new EventEmitter();
+
+  onClickIncreaseNumberChild() {
+    this.numberChildInt = this.numberChildInt + 1;
+    this.eventIncreaseChild.emit(this.numberChildInt);
+  }
 
   constructor() { }
 

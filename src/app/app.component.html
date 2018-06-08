@@ -3,6 +3,9 @@
 <!--App Component-->
 <h4>This is {{nameParrentString}}</h4>
 <p>Show Number of Parrent ==> {{numberParrentInt}}</p>
+
+<p style="color: orangered">Show Number From Child ==> {{numberFromChild}}</p>
+
 <button (click)="onClickIncreaseNumberParrent()">Increase Number Parrent</button>
 
 
@@ -10,4 +13,7 @@
 <hr/>
 
 <!--Child Component-->
-<app-childcomponent [nameFromParrent]="nameChildString"></app-childcomponent>
+<app-childcomponent (eventIncreaseChild)="onChangeChild($event)" [nameFromParrent]="nameChildString"
+                    [numberFromParrent]="numberParrentInt">
+
+</app-childcomponent>
