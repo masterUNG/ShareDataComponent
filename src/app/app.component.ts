@@ -11,6 +11,7 @@ export class AppComponent {
   // Explicit
   nameParrentString = 'App Component';
   nameChildString = 'Child Component';
+  namePlaceHolder = 'Your Name';
 
   numberParrentInt = 0;
   numberFromChild = 0;
