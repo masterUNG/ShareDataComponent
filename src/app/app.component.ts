@@ -16,6 +16,21 @@ export class AppComponent {
   numberParrentInt = 0;
   numberFromChild = 0;
 
+  nameInputParrentString = '';
+  nameInputSentToChild = '';
+  blankString: string;
+
+
+
+  onClickSentToChild(nameString) {
+    this.nameInputParrentString = nameString;
+    this.nameInputSentToChild = 'Name Input From Parrent ==> ' + nameString;
+    this.blankString = ' ';
+    // this.blankString = '';
+    this.namePlaceHolder = 'Your Name';
+
+  }
+
   onChangeChild(changeNumberFromChild) {
     this.numberFromChild = changeNumberFromChild;
   }

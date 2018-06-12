@@ -10,15 +10,25 @@
 
 <br/><br/>
 
-<input type="text" [placeholder]="namePlaceHolder">
-<button>Sent to Child</button>
+<input #nameInput
+       type="text"
+       [placeholder]="namePlaceHolder"
+       value="{{blankString}}">
+
+<button (click)="onClickSentToChild(nameInput.value)">Sent to Child</button>
+
+<br/>
+
+<h4>Name From Input Parrent ==> {{nameInputParrentString}}</h4>
 
 <br/><br/>
 
 <hr/>
 
 <!--Child Component-->
-<app-childcomponent (eventIncreaseChild)="onChangeChild($event)" [nameFromParrent]="nameChildString"
-                    [numberFromParrent]="numberParrentInt">
+<app-childcomponent (eventIncreaseChild)="onChangeChild($event)"
+                    [nameFromParrent]="nameChildString"
+                    [numberFromParrent]="numberParrentInt"
+                    [nameInputFromParrent]="nameInputSentToChild">
 
 </app-childcomponent>

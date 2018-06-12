@@ -11,6 +11,9 @@ export class ChildcomponentComponent implements OnInit {
   @Input() nameFromParrent: string;
   @Input() numberFromParrent: number;
 
+  @Input() nameInputFromParrent: string;
+
+
   numberChildInt = 0;
   colorChild = '#ff2621';
 
